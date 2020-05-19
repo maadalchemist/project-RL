@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <string>
 #include "display.h"
 
 using namespace std;
@@ -9,7 +10,8 @@ int const displayWidth = 236;
 int const displayHeight = 62;
 char display[displayWidth][displayHeight];
 
-void clearDisplay() {
+// repopulate display array with periods
+void clear_display() {
 	for (int i = 0; i < displayWidth; i++) {
 		for (int j = 0; j < displayHeight; j++) {
 			display[i][j] = '.';
@@ -17,6 +19,7 @@ void clearDisplay() {
 	}
 }
 
+// print display
 void draw() {
 	for (int i = 0; i < displayHeight; i++) {
 		for (int j = 0; j < displayWidth; j++) {
@@ -24,29 +27,37 @@ void draw() {
 		}
 		cout << "\n";
 	}
-}
+} // print display
 
-void drawChar(int const& x, int const& y, char const& character) {
+// different ways to alter display
+void draw_char(int const& x, int const& y, char const& character) {
 	display[x][y] = character;
 }
 
-void drawRect(int const& x, int const& y, int const& w, int const& h, char const& character) {
+void draw_rect(int const& x, int const& y, int const& w, int const& h, char const& character) {
 	for (int i = 0; i < w; i++) {
-		drawChar(x + i, y, character);
+		draw_char(x + i, y, character);
 	}
 	for (int i = 0; i < h; i++) {
-		drawChar(x + w, y + i, character);
+		draw_char(x + w, y + i, character);
 	}
 	for (int i = w; i > 0; i--) {
-		drawChar(x + i, y + h, character);
+		draw_char(x + i, y + h, character);
 	}
 	for (int i = h; i > 0; i--) {
-		drawChar(x, y + i, character);
+		draw_char(x, y + i, character);
 	}
 }
 
-void drawCircle(int const& x, int const& y, int const& r, char const& character) {
+void draw_circle(int const& x, int const& y, int const& r, char const& character) {
 	for (double i = 0; i < 6.3; i += .1) {
-		drawChar(int(x + cos(r)), int(y + sin(r)), character);
+		draw_char(int(x + cos(r)), static_cast<int>(y + sin(r)), character);
 	}
-} //needs work, but likely wont use anyways so leaving as is for now
+} //doesn't work, but likely wont use anyways so leaving as is for now
+
+void draw_text(int const& x, int const& y, string const& txt) {
+	for (int i = 0; i < txt.size(); i++)
+	{
+		draw_char(x + i, y, txt[i]);
+	}
+}
