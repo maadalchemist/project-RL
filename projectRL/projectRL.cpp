@@ -8,6 +8,7 @@
 #include "commonFunctions.h"
 #include "Player.h"
 #include "game_log.h"
+#include "dungeonGeneration.h"
 
 using namespace std;
 
@@ -48,9 +49,12 @@ void start() {
 
 int main() {
 	if (debug == false) { start(); }
+	generate_dungeon();
 
 	clear_display();
+	display_dungeon();
 	draw_ui();
+	player.display();
 	draw();
 
 	game_loop = true;
@@ -73,11 +77,12 @@ int main() {
 			player.move(4);
 			append_log("Player moved down");
 		}
-		else if (input == "end" && debug) {
+		else if (input == "end") {
 			game_loop = false;
 		}
 		clear_display();
 		draw_ui();
+		display_dungeon();
 
 		player.display();
 
