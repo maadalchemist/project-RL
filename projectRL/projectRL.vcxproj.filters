@@ -30,6 +30,12 @@
     <ClCompile Include="game_log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="dungeonGeneration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DungeonRoom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="display.h">
@@ -42,6 +48,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="game_log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dungeonGeneration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DungeonRoom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

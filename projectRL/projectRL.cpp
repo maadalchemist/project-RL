@@ -1,6 +1,8 @@
 ﻿#include <iostream>
 #include <string>
 #include <cstdio>
+#include <cstdlib>
+#include <ctime>
 
 #include "display.h"
 #include "commonFunctions.h"
@@ -16,8 +18,9 @@ bool debug = true;
 
 Player player = Player(10, 10, 10);
 
-void start()
-{
+void start() {
+	srand(time(nullptr));
+
 	cout << "  ____            _           _     ____  _     \n";
 	cout << " |  _ \\ _ __ ___ (_) ___  ___| |_  |  _ \\| |    \n";
 	cout << " | |_) | '__/ _ \\| |/ _ \\/ __| __| | |_) | |    \n";
