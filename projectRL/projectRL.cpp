@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <string>
+#include <cstdio>
 
 #include "display.h"
 #include "commonFunctions.h"
@@ -69,6 +70,9 @@ int main() {
 			player.move(4);
 			append_log("Player moved down");
 		}
+		else if (input == "end" && debug) {
+			game_loop = false;
+		}
 		clear_display();
 		draw_ui();
 		print_log();
@@ -76,6 +80,13 @@ int main() {
 		player.display();
 
 		draw();
+	}
+
+	if (remove("log.txt") != 0) {
+		perror("Error deleting file");
+	}
+	else {
+		puts("\"log.txt\" successfully deleted");
 	}
 	return 0;
 }

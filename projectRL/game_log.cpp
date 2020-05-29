@@ -20,11 +20,11 @@ void append_log(string const& txt) {
 void print_log() {
 	ilog.open("log.txt");
 	vector<string> log_output;
-	//while (getline(ilog, line)) {}
-	for (int i = 0; i < 10; i++) {
-		if (getline(ilog, line)) {
-			draw_text(2, 50 + i, line);
-		}
+	while (getline(ilog, line)) {
+		log_output.push_back(line);
 	}
 	ilog.close();
+	for (int i = log_output.size() - 10; i < log_output.size(); i++) {
+		draw_text(2, i + 60 - log_output.size(), log_output.at(i));
+	}
 }
