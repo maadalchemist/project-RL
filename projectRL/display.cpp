@@ -6,23 +6,23 @@
 using namespace std;
 
 //global display variables
-int const displayWidth = 236;
-int const displayHeight = 62;
-char display[displayWidth][displayHeight];
+int const display_width = 236;
+int const display_height = 62;
+char display[display_width][display_height];
 
 // repopulate display array with periods
 void clear_display() {
-	for (int i = 0; i < displayWidth; i++) {
-		for (int j = 0; j < displayHeight; j++) {
-			display[i][j] = '.';
+	for (int i = 0; i < display_width; i++) {
+		for (int j = 0; j < display_height; j++) {
+			display[i][j] = ' ';
 		}
 	}
 }
 
 // print display
 void draw() {
-	for (int i = 0; i < displayHeight; i++) {
-		for (int j = 0; j < displayWidth; j++) {
+	for (int i = 0; i < display_height; i++) {
+		for (int j = 0; j < display_width; j++) {
 			cout << display[j][i];
 		}
 		cout << "\n";

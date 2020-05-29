@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "display.h"
 
 Player::Player(int x, int y, int max_health) {
 	this->x_ = x;
@@ -33,4 +34,8 @@ void Player::change_health(int const& difference) {
 
 void Player::attack(int const& damage) {
 	//filler
+}
+
+void Player::display() {
+	draw_char(x_, y_, '@');
 }
