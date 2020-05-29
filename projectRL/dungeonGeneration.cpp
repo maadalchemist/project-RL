@@ -10,12 +10,14 @@
 
 using namespace std;
 
+//generate rooms into a file
 void generate_dungeon() {
-	auto room_number = rand_int(3, 10);
-	vector<DungeonRoom> dungeon_rooms;
-	for (int i = 0, i < room_number; i++) {
+	const auto room_number = rand_int(3, 10); // amount of rooms
+	vector<DungeonRoom> dungeon_rooms; // store dungeon room information
+	for (auto i = 0; i < room_number; i++) {
 	}
 }
 
+// print dungeon
 void display_dungeon() {
 }

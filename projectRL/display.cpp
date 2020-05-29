@@ -3,6 +3,8 @@
 #include <string>
 #include "display.h"
 
+#include "game_log.h"
+
 using namespace std;
 
 //global display variables
@@ -56,16 +58,19 @@ void draw_circle(int const& x, int const& y, int const& r, char const& character
 } //doesn't work, but likely wont use anyways so leaving as is for now
 
 void draw_text(int const& x, int const& y, string const& txt) {
-	for (int i = 0; i < txt.size(); i++)
+	for (auto i = 0; i < txt.size(); i++)
 	{
 		draw_char(x + i, y, txt[i]);
 	}
 }
 
+// draws ui and prints relevant information, including player stats and log
 void draw_ui() {
 	draw_rect(0, 0, 235, 61, '#');
 	draw_rect(200, 0, 35, 61, '#');
 	draw_rect(0, 48, 200, 13, '#');
 
 	draw_text(209, 2, "Player Information");
+
+	print_log();
 }

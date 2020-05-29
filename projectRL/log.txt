@@ -1,4 +1,0 @@
-Player moved up
-Player moved right
-Player moved down
-Player moved left

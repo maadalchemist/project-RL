@@ -78,7 +78,6 @@ int main() {
 		}
 		clear_display();
 		draw_ui();
-		print_log();
 
 		player.display();
 

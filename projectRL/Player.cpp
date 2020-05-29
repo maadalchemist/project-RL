@@ -8,6 +8,13 @@ Player::Player(int x, int y, int max_health) {
 	this->health_ = max_health_;
 }
 
+/*
+ * 1 - right
+ * 2 - up
+ * 3 - left
+ * 4 - down
+ * done this way because I wanted to use a switch statement
+ */
 void Player::move(int const& direction) {
 	switch (direction)
 	{
