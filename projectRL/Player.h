@@ -7,5 +7,5 @@ public:
 	void move(int const& direction); // moves player		0: Right, 1: Up, 2: Left, 3: Down			NOTE: currently unsafe; doesn't check environment to see if moveable
 	void change_health(int const& difference);
 	void attack(int const& damage); // filler for now, WIP
-	void display();
+	void display() const;
 };

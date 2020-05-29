@@ -10,6 +10,7 @@ using namespace std;
 //define some global variables
 string input;
 bool game_loop, b;
+bool debug = true;
 
 Player player = Player(10, 10, 10);
 
@@ -41,9 +42,10 @@ void start()
 }
 
 int main() {
-	start();
+	if (debug == false) { start(); }
 
 	clear_display();
+	draw_ui();
 	draw();
 
 	game_loop = true;
@@ -63,6 +65,8 @@ int main() {
 			player.move(4);
 		}
 		clear_display();
+		draw_ui();
+
 		player.display();
 
 		draw();

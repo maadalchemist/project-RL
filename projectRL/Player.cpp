@@ -36,6 +36,6 @@ void Player::attack(int const& damage) {
 	//filler
 }
 
-void Player::display() {
+void Player::display() const {
 	draw_char(x_, y_, '@');
 }

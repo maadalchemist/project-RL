@@ -61,3 +61,11 @@ void draw_text(int const& x, int const& y, string const& txt) {
 		draw_char(x + i, y, txt[i]);
 	}
 }
+
+void draw_ui() {
+	draw_rect(0, 0, 235, 61, '#');
+	draw_rect(200, 0, 35, 61, '#');
+	draw_rect(0, 48, 200, 13, '#');
+
+	draw_text(209, 2, "Player Information");
+}
