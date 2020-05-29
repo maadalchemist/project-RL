@@ -4,6 +4,7 @@
 #include "display.h"
 #include "commonFunctions.h"
 #include "Player.h"
+#include "game_log.h"
 
 using namespace std;
 
@@ -52,20 +53,25 @@ int main() {
 	// Main gameplay loop
 	while (game_loop) {
 		cin >> input;
-		if (input == "r" || input == "right" || input == "e" || input == "east" || input == "d") {
+		if (input == "r" || input == "right" || input == "d") {
 			player.move(1);
+			append_log("Player moved right");
 		}
-		else if (input == "u" || input == "up" || input == "n" || input == "north" || input == "w") {
+		else if (input == "u" || input == "up" || input == "w") {
 			player.move(2);
+			append_log("Player moved up");
 		}
-		else if (input == "l" || input == "left" || input == "w" || input == "west" || input == "a") {
+		else if (input == "l" || input == "left" || input == "a") {
 			player.move(3);
+			append_log("Player moved left");
 		}
-		else if (input == "d" || input == "down" || input == "s" || input == "south" || input == "s") {
+		else if (input == "d" || input == "down" || input == "s") {
 			player.move(4);
+			append_log("Player moved down");
 		}
 		clear_display();
 		draw_ui();
+		print_log();
 
 		player.display();
 

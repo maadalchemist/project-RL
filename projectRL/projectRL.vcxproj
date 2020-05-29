@@ -149,12 +149,14 @@
   <ItemGroup>
     <ClCompile Include="commonFunctions.cpp" />
     <ClCompile Include="display.cpp" />
+    <ClCompile Include="game_log.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="projectRL.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="commonFunctions.h" />
     <ClInclude Include="display.h" />
+    <ClInclude Include="game_log.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
